@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>${project_name}</title>
+
+		<link rel="stylesheet" href="css/main.css" />
+
+		<script src="js/yepnope.1.5.4-min.js"></script>
+		<script>
+			var IS_DEBUG_MODE = true;
+
+			var libraries = [];
+			libraries.push("js/ticker.js");
+			libraries.push("js/underscore-min.js");
+			if(IS_DEBUG_MODE) libraries.push("js/stats.js");
+
+			yepnope([{
+				load:libraries
+			}, {
+				test:!IS_DEBUG_MODE,
+				yep:"js/experiment.min.js",
+				nope:["js/debug/sketch.js","js/debug/main.js"]
+			}]);
+		</script>
+	</head>
+	<body>
+		<canvas id="stage" width="320" height="240" />
+	</body>
+</html>

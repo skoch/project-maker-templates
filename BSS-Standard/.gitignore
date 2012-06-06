@@ -1,0 +1,6 @@
+.DS_Store
+.svn
+profile
+*.tmproj
+ignore/*
+docs/*.sublime-workspace
